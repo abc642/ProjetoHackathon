@@ -31,9 +31,9 @@ def add_Element(elements, symbol, atomicNumber, numberofNeutrons,
     c = Element.objects.get_or_create(element=elements)[0]
     c.symbol = symbol
     c.atomicNumber = atomicNumber
-    c.numberofNeutrons = numberofNeutrons
-    c.numberofProtons = numberofProtons
-    c.numberofElectrons = numberofElectrons
+    c.neutrons = numberofNeutrons
+    c.protons = numberofProtons
+    c.electrons = numberofElectrons
     c.phase = phase
     c.radioactive = radioactive
     c.tp = Type

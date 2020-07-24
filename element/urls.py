@@ -29,5 +29,5 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('',include('home_page.urls')),
-    url(r'^', include(router.urls)),
+    path('', include(router.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

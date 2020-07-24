@@ -1,1 +1,0 @@
-web: gunicorn element.wsgi:application --log-file=-

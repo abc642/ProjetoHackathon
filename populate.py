@@ -4,9 +4,9 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE','element.settings')
 import django
 django.setup()
 from table.models import Element
+import os
 
-
-table = pd.read_csv("C:/Users/benja/Desktop/projetinApi/fontes/c2dd862cd38f21b0ad36b8f96b4bf1ee-1d92663004489a5b6926e944c1b3d9ec5c40900e/Periodic Table of Elements.csv")
+table = pd.read_csv(os.path.join('static/datasets/PeriodicTableofElements.csv',))
 firstfill = table.loc[:,['Element','Symbol','AtomicMass','AtomicNumber','NumberofNeutrons','NumberofProtons',
                      'NumberofElectrons','Phase','Radioactive','Type']]
 

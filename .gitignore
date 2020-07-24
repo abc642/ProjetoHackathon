@@ -1,2 +1,4 @@
 venv/
-*populate/
+populate.py
+db.sqlite3
+.idea

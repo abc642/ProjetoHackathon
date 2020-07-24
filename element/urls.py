@@ -26,7 +26,6 @@ router = routers.DefaultRouter()
 router.register(r'elements', ElementViewSet)
 
 urlpatterns = [
-
     path('admin/', admin.site.urls),
     path('',include('home_page.urls')),
     path('', include(router.urls)),

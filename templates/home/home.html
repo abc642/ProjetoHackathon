@@ -1,31 +1,18 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
-
+{% block title %}
+Periodic Table Api
+{% endblock %}
 {% block main %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Periodic Api</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<!--------navbar---->
 <p></p>
 <div class="card text-center">
   <div class="card-header">
-    <h1>Get Starting</h1>
   </div>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <h5 class="card-title">Starting with Periodic Table Api</h5>
+    <p class="card-text">Getting element by name:<br>
+    http://127.0.0.1:8000/elements/<font color="red">?element=</font><font color="green">Hydrogen</font><font color="blue">&format=json</font>
+    </p>
   </div>
   <div class="card-footer text-muted">
   </div>
@@ -35,57 +22,50 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Query</th>
-      <th scope="col">info</th>
+      <th scope="col">Key:</th>
+      <th scope="col">Value:</th>
     </tr>
   </thead>
   <tbody>
   <!--cada bloco pe uma instancia na tabela-->
     <tr>
       <td>element</td>
-      <td>Get specific element by name.</td>
+      <td>"Hydrogen"</td>
     </tr>
     <tr>
       <td>symbol</td>
-      <td>Get specific element symbol.</td>
-
+      <td>"H"</td>
     </tr>
     <tr>
       <td>atomicNumber</td>
-      <td><p>One or more elements by atomic number.</td>
+      <td>1</td>
     </tr>
-  <tr>
+    <tr>
       <td>atomicMass</td>
-      <td><p>One or more elements by atomic mass.</td>
+      <td><p>1.007</td>
     </tr>
-  <tr>
+    <tr>
       <td>neutrons</td>
-      <td><p>One or more elements by number of neutrons.</td>
+      <td>0</td>
     </tr>
-  <tr>
+    <tr>
       <td>electrons</td>
-      <td><p>// by number of electrons.</td>
+      <td>1</td>
     </tr>
-  <tr>
+    <tr>
       <td>phase</td>
-      <td><p> by natural phase.</td>
+      <td><p> "gas"</td>
     </tr>
-  <tr>
+    <tr>
+      <td>radioactive</td>
+      <td>"no"</td>
+    </tr>
+    <tr>
       <td>tp</td>
-      <td><p> by type.<br>
-      Exemple: /?tp=Nonmetal</td>
+      <td>"Nonmetal"</td>
     </tr>
   </tbody>
 </table>
-
-
-
 </div>
-
-
-
-
-
-
 
 {% endblock %}

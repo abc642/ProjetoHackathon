@@ -6,7 +6,7 @@ class ElementViewSet(ModelViewSet):
     queryset = Element.objects.all()
     serializer_class = ElementSerializer
     http_method_names = ['get','head','list']
-    filter_fields = ('atomicNumber','atomicMass','neutrons',
+    filter_fields = ('element','symbol','atomicNumber','atomicMass','neutrons',
                        'protons','electrons','phase','radioactive','tp')
 
 

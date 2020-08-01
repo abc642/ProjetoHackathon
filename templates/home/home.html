@@ -70,14 +70,18 @@ Periodic Table Api
 <!---bot is here --->
 <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
 </script>
-<script>
-   (function () {
-      window.onload = function () {
-         new BlipChat()
-                    .withAppKey('YmVuamE6ZWI5OTg1YTgtNDM1OS00NDE1LWI4NWEtZDczNWMxNWVkODY0')
-                    .withButton({"color":"#2CC3D5"})
-                    .build();
-      }
-})();
+<script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
 </script>
+<script>
+    (function () {
+        window.onload = function () {
+            new BlipChat()
+            .withAppKey('YmVuamE6ZWI5OTg1YTgtNDM1OS00NDE1LWI4NWEtZDczNWMxNWVkODY0')
+            .withButton({"color":"#2CC3D5","icon":""})
+            .withCustomCommonUrl('https://chat.blip.ai/')
+            .build();
+        }
+    })();
+</script>
+
 {% endblock %}

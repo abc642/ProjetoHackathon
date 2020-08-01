@@ -21,4 +21,4 @@ static3==0.7.0
 zipp==3.1.0
 gunicorn
 psycopg2
-python
+

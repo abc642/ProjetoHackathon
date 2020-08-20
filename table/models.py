@@ -16,3 +16,15 @@ class Element(models.Model):
         return self.element
 
 
+
+
+class Comercio(models.Model):
+    tipo = models.CharField(max_length=15)
+    titulo = models.CharField(max_length=30)
+    descricao = models.TextField(max_length=240)
+    cidade = models.CharField(max_length=30)
+    numero = models.IntegerField()
+    imagem = models.CharField(max_length=240)
+
+    def __str__(self):
+        return self.titulo

@@ -18,12 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
 from rest_framework import routers
-from table.api.viewsets import ElementViewSet
+from table.api.viewsets import ElementViewSet,ComercioViewSet
 from django.conf.urls.static import static
 
 
 router = routers.DefaultRouter()
 router.register(r'elements', ElementViewSet)
+router.register(r'comercio',ComercioViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

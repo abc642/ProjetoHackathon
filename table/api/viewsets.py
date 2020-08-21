@@ -13,7 +13,7 @@ class ComercioViewSet(ModelViewSet):
     queryset = Comercio.objects.all()
     serializer_class = ComercioSerializer
     http_method_names = ['get','head','list']
-    filter_fields = ('titulo','descricao','cidade','numero')
+    filter_fields = ('titulo','descricao','cidade','numero','tipo','imagem')
 
 
 

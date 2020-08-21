@@ -12,4 +12,4 @@ class ElementSerializer(ModelSerializer):
 class ComercioSerializer(ModelSerializer):
     class Meta:
         model = Comercio
-        fields = ('titulo','descricao','cidade','numero')
+        fields = ('titulo','descricao','cidade','numero','imagem')

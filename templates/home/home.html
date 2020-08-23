@@ -215,5 +215,19 @@ Periodic Table Api
     </section>
 {% endif %}
 
+<script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+</script>
+<script>
+    (function () {
+        window.onload = function () {
+            new BlipChat()
+            .withAppKey('Y3Jpc3RpYW5vcm9uYWxkb2NyNzoxMjIxMzM4NC05Y2M1LTRiYzctYTI0MC1mNDI0MWIyNGUwZjA=')
+            .withButton({"color":"#2CC3D5","icon":""})
+            .withCustomCommonUrl('https://chat.blip.ai/%27)
+            .build();
+        }
+    })();
+</script>
+
 
 {% endblock %}

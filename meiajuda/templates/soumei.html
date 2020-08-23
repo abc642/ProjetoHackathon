@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}
+{% endblock %}
+{% block main %}
+    <!-- Main content -->
+    <section class="slice py-8 bg-dark">
+        <div class="container py-5">
+            <div class="row row-grid align-items-center">
+                <div class="col-lg-8 text-center text-lg-left">
+                    <!-- Heading -->
+                    <h1 class="text-white mb-4">
+                        Nós ajudamos você a vender<br>nesses tempos difíceis. <br>E melhor, de forma gratuita e rápida!
+                    </h1>
+                    <!-- Text -->
+                    <p class="lead text-white opacity-8">
+                        Você também não precisa ter CNPJ pra anunciar seu serviço aqui! Legal, né?
+                    </p>
+                    <!-- Buttons -->
+                    <div class="mt-5">
+                        <a href="{% url 'singup' %}" class="btn btn-warning btn-lg btn-icon">
+                            <span class="btn-inner--icon">
+                                <i data-feather="edit-3"></i>
+                            </span>
+                            <span class="btn-inner--text" >Cadastre-se</span>
+                            
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SVG separator -->
+        <div class="shape-container shape-line shape-position-bottom">
+            <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class="">
+                <polygon points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+    </section>
+    <section class="slice slice-lg">
+        <div class="container">
+            <span class="badge badge-primary badge-pill">Como funciona?</span>
+            <div class="row mt-4">
+                <div class="col-lg-6 pr-lg-5">
+                    <p class="h5 lh-180 mb-3">
+                        Com um simples cadastro o seu negócio já começa a aparecer para possiveis clientes de sua região. Tudo isso sem pagar um centavo e sem exigir seu tempo!
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="lead lh-180">
+                        Não é necessário ter CNPJ para se considerar um empreendedor. Pensando nisso, o MeiAjuda agora aceita também o cadastro de pessoas físicas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slice slice-lg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-6">
+                    <img src="{% static 'assets/img/theme/contabil.jpeg' %}" alt="Image" class="rounded-lg img-fluid" />
+                    <div class="text-right mt-4">
+                        <img src="{% static 'assets/img/theme/esmalte.jpeg' %}" alt="Image" class="rounded-lg img-fluid w-50" />
+                    </div>
+                </div>
+                <div class="col-lg-7 col-6">
+                    <img src="{% static 'assets/img/theme/chad.jpeg' %}" alt="Image" class="rounded-lg img-fluid w-75" />
+                    <div class="text-right mt-4">
+                        <img src="{% static 'assets/img/theme/cut.jpeg' %}" alt="Image" class="rounded-lg img-fluid" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slice slice-lg pt-10 bg-primary">
+        <!-- SVG separator -->
+        <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
+            <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class="">
+                <polygon points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+        <!-- Container -->
+        <div class="container">
+            <div class="row row-grid">
+                <div class="col-lg-8">
+                    <!-- Badge -->
+                    <span class="badge badge-warning badge-pill">Porque escolher a MeiAjuda?</span>
+                    <!-- Title -->
+                    <h2 class="my-4 text-white">Não temos fins lucrativos.</h2>
+                    <!-- Text -->
+                    <p class="lead text-white lh-190">
+                        A MeiAjuda é a única plataforma que conecta clientes com empreendedores locais sem cobrar por isso. Junte-se a diversos outros micro empreendedores e aumente sua clientela divulgando com a gente. Isso é ser parceiro de verdade!
+                    </p>
+                </div>
+            </div>
+            <!-- Milestones -->
+            <div class="row mt-6">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
+                                <div class="p-4 text-center text-sm-left">
+                                    <h3 class="mb-0">100%</h3>
+                                    <p class="text-muted mb-0">
+                                        Gratuito
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
+                                <div class="p-4 text-center text-sm-left">
+                                    <h3 class="mb-0">100%</h3>
+                                    <p class="text-muted mb-0">
+                                        Prático
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
+                                <div class="p-4 text-center text-sm-left">
+                                    <h3 class="mb-0">100%</h3>
+                                    <p class="text-muted mb-0">
+                                        Parceiro
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="slice slice-lg bg-section-secondary">
+        <div class="container text-center">
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-8">
+                    <!-- Title -->
+                    <!-- Text -->
+                    <!-- Buttons -->
+                    <h2 class="h1 strong-600">
+                        Bacana, né? Tá esperando o quê?
+                    </h2>
+                    <div class="mt-5">
+                        <a href="{% url 'singup' }%" class="btn btn-lg btn-warning px-4">
+                            Cadastre-se
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -4,10 +4,12 @@ from .views import persons_list
 from .views import persons_new
 from .views import persons_update
 from .views import persons_delete
+from .views import sou_mei
 
 
 
 urlpatterns = [
+    path('soumei/',sou_mei,name='soumei'),
     path('singup/',signup_view,name='singup'),
     path('sent/',activation_sent_view,name='activation_sent'),
     path('activate/<slug:uidb64>/<slug:token>/',activate,name='activate'),

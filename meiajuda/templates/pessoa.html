@@ -7,10 +7,24 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Document</title>
 </head>
 <body>
-
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+          <div class="card auth-card">
+              <div class="card-body">
+                  <h4 class="card-title text-center">Novo anuncio</h4>
+                  <form method="POST" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <input type="hidden" name="next" value="{{ next }}">
+                      {{ form|bootstrap }}
+                      <button type="submit" class="btn btn-primary btn-block">Criar</button>
+                  </form>
+              </div>
+          </div>
+    </div>
+</div>
 </body>
 </html>

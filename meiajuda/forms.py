@@ -14,15 +14,15 @@ class PersonForm(ModelForm):
 
 
 class SignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30,help_text='Nome')
-    last_name = forms.CharField(max_length=100,help_text='Sobrenome')
-    email = forms.EmailField(max_length=200,help_text='Email')
+    nome = forms.CharField(max_length=30)
+    sobrenome = forms.CharField(max_length=100)
+    email = forms.EmailField(max_length=200)
 
 
 
     class Meta:
         model = User
-        fields = ('username','first_name','last_name',
+        fields = ('username','nome','sobrenome',
                   'email','password1','password2',)
 
 

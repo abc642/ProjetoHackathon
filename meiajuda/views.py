@@ -15,6 +15,8 @@ from .models import Person
 from .forms import PersonForm
 
 
+def sou_mei(request):
+    return render(request,'soumei.html')
 
 def persons_list(request):
     persons = Person.objects.all()
@@ -62,8 +64,8 @@ def signup_view(request):
             '''campos do formulario'''
             user = form.save()
             user.refresh_from_db()
-            user.profile.first_name = form.cleaned_data.get('first_name')
-            user.profile.last_name = form.cleaned_data.get('last_name')
+            user.profile.first_name = form.cleaned_data.get('nome')
+            user.profile.last_name = form.cleaned_data.get('sobrenome')
             user.profile.email = form.cleaned_data.get('email')
             # itens p/ anuncio
 

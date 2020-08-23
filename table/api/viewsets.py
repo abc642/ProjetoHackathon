@@ -1,6 +1,14 @@
 from rest_framework.viewsets import ModelViewSet
-from .serializers import ElementSerializer,ComercioSerializer
+from .serializers import ElementSerializer,ComercioSerializer,PersonSerializer
 from table.models import Element,Comercio
+from meiajuda.models import Person
+
+
+class PersonViewSet(ModelViewSet):
+    queryset = Person.objects.all()
+    serializer_class = PersonSerializer
+    http_method_names = ['get','head','list']
+    filter_fields = ('titulo','categoria','descricao','numero','cidade')
 
 class ElementViewSet(ModelViewSet):
     queryset = Element.objects.all()

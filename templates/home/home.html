@@ -1,67 +1,219 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load bootstrap4 %}
+
 {% block title %}
 Periodic Table Api
 {% endblock %}
+
 {% block main %}
-<p></p>
-<div class="card text-center">
-  <div class="card-header">
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Starting with Periodic Table Api</h5>
-    <p class="card-text">Getting element by name:<br>
-    ccomp-pte.herokuapp.com/elements/<font color="red">?element=</font><font color="green">Hydrogen</font><font color="blue">&format=json</font>
-    </p>
-  </div>
-  <div class="card-footer text-muted">
-  </div>
+    <!-- AQUI PERTENCE AO ARQUIVO HOME.HTML -->
+    <section class="slice py-5">
+        <div class="container">
+            <div class="row row-grid align-items-center">
+                <div class="col-12 col-md-5 col-lg-6 order-md-2">
+                    <!-- Image -->
+                    <figure class="w-100">
+                        <img alt="Image placeholder" src="{% static 'assets/img/svg/illustrations/main-illustration.svg' %}" class="img-fluid mw-md-120">
+                    </figure>
+                </div>
+                <div class="col-12 col-md-7 col-lg-6 order-md-1 pr-md-5">
+                    <!-- Heading -->
+                    <h1 class="display-4 text-center text-md-left mb-3">Ajude negócios locais nesse momento de <strong class="text-primary">pandemia</strong>
+                    </h1>
+                    <!-- Text -->
+                    <p class="lead text-center text-md-left text-muted">
+                        Conectamos você com pequenos negócios que precisam vender justamente nesse momento.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="text-center text-md-left mt-5">
+                        <a href="#queroajudar" class="btn btn-primary btn-icon">
+                            <span class="btn-inner--text">Saiba Mais</span><span class="btn-inner--icon">
+                                <i data-feather="arrow-right"></i>
+                            </span>
+                        </a>
+                        <!-- href anterios "soumei.html" -->
+                        {% if user is authenticated %}
+                            <a href="{% url 'singup' %}" class="btn btn-neutral btn-icon d-none d-lg-inline-block">Anunciar</a>
+                        {% else %}
+                            <a href="{% url 'person_list' %}" class="btn btn-neutral btn-icon d-none d-lg-inline-block">Anunciar</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slice slice-lg pb-5">
 
-  <!--table --->
-  <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Key:</th>
-      <th scope="col">Value:</th>
-    </tr>
-  </thead>
-  <tbody>
-  <!--cada bloco pe uma instancia na tabela-->
-{% if persons %}
-    {% for person in persons %}
-        <li class="list-group-item">
-              <a href="{% url 'person_update' person.id %}">Aqui vai algo</a>
-              <a href="{% url 'person_delete' person.id %}" class="trash-item">
-                  <i class="fa fa-trash" aria-hidden="true"></i>
-              </a>
-        </li>
 
-    {% endfor %}
+
+    <section class="slice slice-lg pt-lg-6 pb-0 pb-lg-6">
+        <div class="container">
+            <!-- Title -->
+            <!-- Section title -->
+            <div id="queroajudar" class="row mb-5 justify-content-center text-center">
+                <div class="col-lg-6">
+                    <span class="badge badge-soft-success badge-pill badge-lg">
+                        Como posso ajudar?
+                    </span>
+                    <h2 class=" mt-4">Negócios locais são os que mais sentem os efeitos da crise do novo coronavírus segundo o IBGE
+                    </h2>
+                    <div class="mt-2">
+                        <p class="lead lh-180">A gente tem a tarefa de unir você com pequenos negócios locais. Com essa plataforma você pode ajuda-los a continuar de pé.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card -->
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="card border-0 bg-soft-danger">
+                        <div class="card-body pb-5">
+                            <div class="pt-4 pb-5">
+                                <img src="{% static 'assets/img/svg/illustrations/explica1.svg' %}" class="img-fluid img-center" style="height: 200px;" alt="Illustration" />
+                            </div>
+                            <h5 class="h4 lh-130 text-dark mb-3">Adquira um produto ou serviço</h5>
+                            <p class="text-dark opacity-6 mb-0">Muitos negócios não podem abrir no momento ou foram afetados de alguma forma, mas com sua ajuda podemos ajudá-los a continuar atuando.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 bg-soft-success">
+                        <div class="card-body pb-5">
+                            <div class="pt-4 pb-5">
+                                <img src="{% static 'assets/img/svg/illustrations/explica2.svg' %}" class="img-fluid img-center" style="height: 200px;" alt="Illustration" />
+                            </div>
+                            <h5 class="h4 lh-130 text-dark mb-3">Saiba os locais que mais estão sendo afetados</h5>
+                            <p class="text-dark opacity-6 mb-0">A fim de ajudar os empreendedores locais, também listamos locais que estão com menor circulação de pessoas, impedindo assim o contágio.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 bg-soft-warning">
+                        <div class="card-body pb-5">
+                            <div class="pt-4 pb-5">
+                                <img src="{% static 'assets/img/svg/illustrations/explica3.svg' %}" class="img-fluid img-center" style="height: 200px;" alt="Illustration" />
+                            </div>
+                            <h5 class="h4 lh-130 text-dark mb-3">Ajude cadastrando o negócio de algum amigo</h5>
+                            <p class="text-dark opacity-6 mb-0">Sabe a vendinha do Seu Zé aí do bairro? Você mesmo pode ajudar ele a fazer o cadastro aqui na plataforma. Tudo isso sem pagar nada.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slice slice-lg bg-section-dark pt-5 pt-lg-8">
+        <!-- SVG separator -->
+        <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
+            <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class="">
+                <polygon points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+        <!-- Container -->
+        <div class="container position-relative zindex-100">
+            <div class="col">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 text-center">
+                        <div class="mt-4 mb-6">
+                            <h2 class="h1 text-white">
+                                Sabe o mais legal disso tudo?
+                            </h2>
+                            <h4 class="text-white mt-3">Você pode fazer tudo isso usando<br> apenas seu aplicativo de mensagem favorito!</h4>
+                            <!-- Play button -->
+                            <a href="#" class="btn btn-warning btn-icon hover-translate-y-n10 mt-4">
+                                <span class="btn-inner--icon">
+                                    <i data-feather="play"></i>
+                                </span>
+                                <span class="btn-inner--text">Como?</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slice pt-0">
+        <div class="container position-relative zindex-100">
+            <div class="row">
+
+                <div class="col-xl-4 col-sm-6 mt-n7">
+                    <a href="#">
+                    <div class="card bg-soft-zap border-0 mb-5 hover-translate-y-n10">
+                        <div class="d-flex p-5">
+                            <div>
+                                <span class="badge badge-warning badge-pill">Chatbot</span>
+                            </div>
+                            <div class="pl-4">
+                                <h5 class="lh-130 text-dark">Consultar negócios locais</h5>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col-xl-4 col-sm-6 mt-sm-n7">
+                    <a href="https://web.telegram.org/#/im?p=@MeiAjuda_bot" target=_blank>
+                    <div class="card bg-soft-telegram border-0 mb-5 hover-translate-y-n10">
+                        <div class="d-flex p-5">
+                            <div>
+                                <span class="badge badge-success badge-pill">Telegram</span>
+                            </div>
+                            <div class="pl-4">
+                                <h5 class="lh-130 text-dark">Consultar negócios locais</h5>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-12 col-sm-6 mt-xl-n7">
+                    <a href="{% static 'https://m.me/MeiAjuda.br' %}" target=_blank>
+                    <div class="card bg-soft-messenger border-0 mb-5 hover-translate-y-n10">
+                        <div class="d-flex p-5 p">
+                            <div>
+                                <span class="badge badge-danger badge-pill">Messenger</span>
+                            </div>
+                            <div class="pl-3">
+                                <h5 class="lh-130 text-dark">Consultar negócios locais</h5>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRIAR UMA FUNÇÃO PARA CÁ  MEIAJUDA.URLS -->
+{% if user.is_authenticated %}
+
+{% else %}
+
+  <section class="slice slice-lg bg-section-secondary">
+        <div class="container text-center">
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-8">
+                    <!-- Title -->
+                    <h2 class="h1 strong-600">
+                        Para o Empreendedor
+                    </h2>
+                    <!-- Text -->
+                    <p class="lead text-muted">
+                        Em poucos minutos você já estará divulgando seu trabalho online.<br>100% de graça e 100% sem ocupar seu tempo, vem ver!
+                    </p>
+                    <!-- Buttons -->
+                    <div class="mt-5">
+                        <a href="{% url 'singup' %}" class="btn btn-lg btn-warning px-4">
+                            Cadastre-se
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endif %}
-
-
-  </tbody>
-  </table>
-</div>
-
-<!---bot is here --->
-<script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
-</script>
-<script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
-</script>
-<script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
-</script>
-<script>
-    (function () {
-        window.onload = function () {
-            new BlipChat()
-            .withAppKey('YmVuamE6ZWI5OTg1YTgtNDM1OS00NDE1LWI4NWEtZDczNWMxNWVkODY0')
-            .withButton({"color":"#626262","icon":""})
-            .withCustomCommonUrl('https://chat.blip.ai/')
-            .build();
-        }
-    })();
-</script>
 
 
 {% endblock %}

@@ -18,18 +18,18 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
 from rest_framework import routers
-from table.api.viewsets import ElementViewSet,ComercioViewSet
+from table.api.viewsets import ElementViewSet,ComercioViewSet,PersonViewSet
 from django.conf.urls.static import static
 
 
 
 
 router = routers.DefaultRouter()
+router.register(r'anuncios',PersonViewSet)
 router.register(r'elements', ElementViewSet)
 router.register(r'comercio',ComercioViewSet)
 
 urlpatterns = [
-
     path('',include('home_page.urls')),
     path('meiajuda/',include('meiajuda.urls')),
     path('home_page/',include('home_page.urls')),

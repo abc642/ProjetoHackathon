@@ -27,42 +27,19 @@ Periodic Table Api
   </thead>
   <tbody>
   <!--cada bloco pe uma instancia na tabela-->
-    <tr>
-      <td>element</td>
-      <td>"Hydrogen"</td>
-    </tr>
-    <tr>
-      <td>symbol</td>
-      <td>"H"</td>
-    </tr>
-    <tr>
-      <td>atomicNumber</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>atomicMass</td>
-      <td><p>1.007</td>
-    </tr>
-    <tr>
-      <td>neutrons</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>electrons</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>phase</td>
-      <td><p> "gas"</td>
-    </tr>
-    <tr>
-      <td>radioactive</td>
-      <td>"no"</td>
-    </tr>
-    <tr>
-      <td>tp</td>
-      <td>"Nonmetal"</td>
-    </tr>
+{% if persons %}
+    {% for person in persons %}
+        <li class="list-group-item">
+              <a href="{% url 'person_update' person.id %}">Aqui vai algo</a>
+              <a href="{% url 'person_delete' person.id %}" class="trash-item">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+              </a>
+        </li>
+
+    {% endfor %}
+{% endif %}
+
+
   </tbody>
   </table>
 </div>

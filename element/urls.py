@@ -22,12 +22,19 @@ from table.api.viewsets import ElementViewSet,ComercioViewSet
 from django.conf.urls.static import static
 
 
+
+
 router = routers.DefaultRouter()
 router.register(r'elements', ElementViewSet)
 router.register(r'comercio',ComercioViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+
     path('',include('home_page.urls')),
+    path('meiajuda/',include('meiajuda.urls')),
+    path('home_page/',include('home_page.urls')),
+    path('home_page/',include('django.contrib.auth.urls')),
     path('', include(router.urls)),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('admin/', admin.site.urls),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

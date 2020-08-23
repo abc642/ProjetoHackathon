@@ -1,3 +1,4 @@
+from meiajuda.models import Person
 from django.shortcuts import render
 
 def home(request):
@@ -6,3 +7,11 @@ def home(request):
 
 def aboutus(request):
     return render(request,'about/about.html')
+
+'''CRUD anuncio'''
+
+
+
+
+
+

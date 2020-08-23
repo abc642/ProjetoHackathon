@@ -1,0 +1,11 @@
+{% load static %}
+{% load bootstrap4 %}
+
+{% autoescape off %}
+    hi {{ user.username }},
+    Please click the following link to confirm your registration:
+    http://{{ domain }} {% url 'activate' uidb64=uid token=token %}
+    <button type="button" class="btn btn-success" href="{% url 'home' %}">
+        Voltar para a home
+    </button>
+{% endautoescape %}

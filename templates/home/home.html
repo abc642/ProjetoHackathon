@@ -33,11 +33,13 @@ Periodic Table Api
                             </span>
                         </a>
                         <!-- href anterios "soumei.html" -->
+                     {% if user.id exist %}
                         {% if user is authenticated %}
                             <a href="{% url 'singup' %}" class="btn btn-neutral btn-icon d-none d-lg-inline-block">Anunciar</a>
                         {% else %}
                             <a href="{% url 'person_list' %}" class="btn btn-neutral btn-icon d-none d-lg-inline-block">Anunciar</a>
                         {% endif %}
+                    {% endif %}
                     </div>
                 </div>
             </div>
@@ -155,7 +157,7 @@ Periodic Table Api
                 </a>
                 </div>
                 <div class="col-xl-4 col-sm-6 mt-sm-n7">
-                    <a href="https://web.telegram.org/#/im?p=@MeiAjuda_bot" target=_blank>
+                    <a href="http://t.me/MeiAjuda_bot" target=_blank>
                     <div class="card bg-soft-telegram border-0 mb-5 hover-translate-y-n10">
                         <div class="d-flex p-5">
                             <div>

@@ -33,13 +33,13 @@ Periodic Table Api
                             </span>
                         </a>
                         <!-- href anterios "soumei.html" -->
-                     {% if user.id exist %}
+
                         {% if user is authenticated %}
                             <a href="{% url 'singup' %}" class="btn btn-neutral btn-icon d-none d-lg-inline-block">Anunciar</a>
                         {% else %}
                             <a href="{% url 'person_list' %}" class="btn btn-neutral btn-icon d-none d-lg-inline-block">Anunciar</a>
                         {% endif %}
-                    {% endif %}
+
                     </div>
                 </div>
             </div>

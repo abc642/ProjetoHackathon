@@ -50,13 +50,7 @@
             animation: hidePreloader .5s linear .5s forwards;
         }
     </style>
-    <script>
-        window.addEventListener("load", function() {
-            setTimeout(function() {
-                document.querySelector('body').classList.add('loaded');
-            }, 300);
-        });
-    </script>
+
     <!-- Favicon -->
     <link rel="icon" href="{% static 'assets/img/brand/favicon.png' %}" type="image/png"><!-- Font Awesome -->
     <link rel="stylesheet" href="{% static 'assets/libs/@fortawesome/fontawesome-free/css/all.min.css' %}">
@@ -143,10 +137,6 @@
 
 {% endblock %}
 
-<!-- FOOTER -->
-
-
-
 
 <footer class="position-relative" id="footer-main">
     <div class="footer pt-lg-7 footer-dark bg-dark">
@@ -163,7 +153,7 @@
                     <!-- Theme's logo -->
                     <a href="{% url 'home' %}">
 
-                        <img alt="Image placeholder" src="{% static 'assets/img/brand/logo.svg' %}" id="footer-logo">
+                        <img alt="Image placeholder" src="{% static 'assets/img/brand/grupoi' %}" id="footer-logo">
                     </a>
                     <!-- Somos -->
                     <p class="mt-4 text-sm opacity-8 pr-lg-4">Conectamos você com pequenos negócios que precisam vender justamente nesse momento.
@@ -261,6 +251,12 @@
         'width': '1em',
         'height': '1em'
     })
+
+   window.addEventListener("load", function() {
+        setTimeout(function() {
+            document.querySelector('body').classList.add('loaded');
+        }, 300);
+    });
 </script>
 
 {% block static %}
